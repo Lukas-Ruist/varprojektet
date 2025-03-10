@@ -9,3 +9,4 @@ presence point är en produkt som vi skapar en sida till. Du skannar ditt kort o
 ## V.10
 gjorde ett repositoty och försökte hitta ett plugging för att länka våran kåd vilket inte gick så väl.
 ## V.11
+Idag har vi Definierat hemsidan, påbörjat en moodbord, påbörjat en site map och gjort ett färj skema.
