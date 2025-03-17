@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="300mm"
+   height="300mm"
+   viewBox="0 0 300 300"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="loggq.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.23149861"
+     inkscape:cx="-390.93108"
+     inkscape:cy="231.1029"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect15"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect13"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,10.900773,0,1 @ F,0,0,1,0,10.153762,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <path
+     style="fill:#21c781;fill-opacity:1;stroke-width:0.264583"
+     id="rect13"
+     width="299.90979"
+     height="299.43628"
+     x="0.530846"
+     y="1.0042597"
+     inkscape:path-effect="#path-effect15"
+     sodipodi:type="rect"
+     d="M 0.530846,1.0042597 H 300.44064 V 300.44054 H 0.530846 Z"
+     ry="0" />
+  <g
+     inkscape:label="Lager 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="m 193.70032,66.990743 a 10.029913,10.276119 13.135867 0 0 -4.98264,1.56838 L 75.47498,140.86582 a 10.767812,11.032132 13.135867 0 0 -3.546037,15.1939 l 87.423607,144.5271 H 299.44374 V 231.99773 L 202.53079,71.782699 a 10.029913,10.276119 13.135867 0 0 -8.83047,-4.791956 z"
+       style="fill:#466080;stroke-width:0.350263;fill-opacity:1"
+       id="path15" />
+    <rect
+       style="fill:#000000;stroke-width:0.223417"
+       id="rect1"
+       width="9.4463472"
+       height="47.450897"
+       x="29.316269"
+       y="197.04779"
+       transform="matrix(0.84283962,-0.53816482,0.51757113,0.85564019,0,0)" />
+    <rect
+       style="fill:#000000;stroke-width:0.223417"
+       id="rect2"
+       width="7.9349313"
+       height="21.876715"
+       x="45.186119"
+       y="184.7229"
+       transform="matrix(0.84283962,-0.53816482,0.51757113,0.85564019,0,0)" />
+    <rect
+       style="fill:#000000;stroke-width:0.223417"
+       id="rect3"
+       width="7.5570774"
+       height="32.661007"
+       x="17.602837"
+       y="204.75087"
+       transform="matrix(0.84283962,-0.53816482,0.51757113,0.85564019,0,0)" />
+    <rect
+       style="fill:#000000;stroke-width:0.223417"
+       id="rect4"
+       width="21.537672"
+       height="7.0868216"
+       x="45.941837"
+       y="184.41475"
+       transform="matrix(0.84283962,-0.53816482,0.51757113,0.85564019,0,0)" />
+    <rect
+       style="fill:#000000;stroke-width:0.223417"
+       id="rect5"
+       width="7.557075"
+       height="20.952347"
+       x="60.300289"
+       y="186.57162"
+       transform="matrix(0.84283962,-0.53816482,0.51757113,0.85564019,0,0)" />
+    <rect
+       style="fill:#000000;stroke-width:0.223417"
+       id="rect6"
+       width="7.5570774"
+       height="18.487362"
+       x="47.075405"
+       y="238.95247"
+       transform="matrix(0.84283962,-0.53816482,0.51757113,0.85564019,0,0)" />
+    <rect
+       style="fill:#000000;stroke-width:0.223417"
+       id="rect7"
+       width="7.5570774"
+       height="17.254871"
+       x="60.678127"
+       y="239.56874"
+       transform="matrix(0.84283962,-0.53816482,0.51757113,0.85564019,0,0)"
+       inkscape:label="rect7" />
+    <rect
+       style="fill:#000000;stroke-width:0.223417"
+       id="rect8"
+       width="19.270548"
+       height="7.7030678"
+       x="47.83112"
+       y="249.73676"
+       transform="matrix(0.84283962,-0.53816482,0.51757113,0.85564019,0,0)" />
+    <rect
+       style="fill:#000000;stroke-width:0.223417"
+       id="rect9"
+       width="10.202055"
+       height="49.299633"
+       x="72.013763"
+       y="196.73969"
+       transform="matrix(0.84283962,-0.53816482,0.51757113,0.85564019,0,0)" />
+    <rect
+       style="fill:#000000;stroke-width:0.223417"
+       id="rect10"
+       width="9.4463472"
+       height="34.201618"
+       x="89.395027"
+       y="202.2859"
+       transform="matrix(0.84283962,-0.53816482,0.51757113,0.85564019,0,0)" />
+    <path
+       style="fill:#000000;stroke-width:0.223417"
+       id="path11"
+       sodipodi:type="arc"
+       sodipodi:cx="57.088535"
+       sodipodi:cy="223.23825"
+       sodipodi:rx="7.3681502"
+       sodipodi:ry="6.1624537"
+       sodipodi:start="5.772981"
+       sodipodi:end="5.4535501"
+       sodipodi:arc-type="arc"
+       d="m 63.518313,220.22878 a 7.3681502,6.1624537 0 0 1 -2.330046,8.12989 7.3681502,6.1624537 0 0 1 -9.875415,-1.29401 7.3681502,6.1624537 0 0 1 0.754466,-8.33634 7.3681502,6.1624537 0 0 1 9.995786,-0.036"
+       sodipodi:open="true"
+       transform="matrix(0.84283962,-0.53816482,0.51757113,0.85564019,0,0)" />
+  </g>
+</svg>
