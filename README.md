@@ -4,7 +4,7 @@ Presence point är en produkt som vi skapar en sida till. Du skannar ditt kort o
 # Moodbord 
 * https://play.google.com/store/apps/details?id=com.gymbros.app&pcampaignid=web_share
 * https://www.skola24.se
-* 
+* https://www.adidas.se/
 # Loggbok
 ## V.10
 Gjorde ett repository och försökte hitta ett pluggin för att länka våran kod vilket inte gick så väl.
