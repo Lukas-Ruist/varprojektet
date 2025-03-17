@@ -1,4 +1,7 @@
 # Varprojektet
+# färgschema
+primär  : RGBA 466080ff
+sekundär: RGBA 21c781ff
 # Definiera
 Presence point är en produkt som vi skapar en sida till. Du skannar ditt kort och ditt namn dyker upp på våran lista.
 # Moodbord 
