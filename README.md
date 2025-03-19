@@ -16,4 +16,10 @@ Vi gjorde ett repository och försökte hitta ett pluggin för att länka våran
 ## V.11
 Idag har vi definierat hemsidan, påbörjat en moodbord, påbörjat en sitemap och gjort ett färg skema. Vi har även skapat alla CSS, JS och HTML dokument vi ska använda + bootstrap och theme. Vi har försökt länka ihop dom men vet inte en om det funkar. Vi gjorde även en skiss, https://github.com/Lukas-Ruist/varprojektet/blob/main/Media.jpg.
 ## V.12
-Idag har vi gjort ett mastadon konto till företaget https://mastodon.social/@presence_point
+Idag har vi gjort ett mastadon konto till företaget https://mastodon.social/@presence_point,
+en stiss logga https://github.com/Lukas-Ruist/varprojektet/blob/main/logga.svg,
+jobbat vidare med site mapen,
+skapat en wireframe,
+ändrat på färg skemat,
+## V.13
+
