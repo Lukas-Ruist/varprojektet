@@ -22,4 +22,4 @@ jobbat vidare med site mapen,
 skapat en wireframe,
 ändrat på färg skemat,
 ## V.13
-
+Vi har skapat en mail-adress för vårat företag så andra kan kontakta oss. "presence.point2025@gmail.com". Vi har lagat html-dokumentet.
