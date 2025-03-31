@@ -25,3 +25,4 @@ skapat en wireframe,
 Vi har skapat en mail-adress för vårat företag så andra kan kontakta oss. "presence.point2025@gmail.com". Vi har lagat html-dokumentet.
 ## V.14
 Idag har vi färdigställt logotypen samt skrivit färdigt CTA (Call to Action)
+## V.15 
