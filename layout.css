@@ -1,1 +1,15 @@
-
+section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 0.75rem;
+  }
+  
+  img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+  }
+  
