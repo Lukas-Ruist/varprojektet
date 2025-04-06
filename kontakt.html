@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VårProdukt – Kontakt</title>
+  <link rel="stylesheet" href="css/bootstraptheme.css" />
+  <link rel="stylesheet" href="css/color.css" />
+  <link rel="stylesheet" href="css/font.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">VårProdukt</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navLinks">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navLinks">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="bilder.html">Design</a></li>
+          <li class="nav-item"><a class="nav-link" href="anvandning.html">Användning</a></li>
+          <li class="nav-item"><a class="nav-link active" href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-secondary text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4">Vill du prata med oss?</h1>
+      <p class="lead">Fyll i formuläret nedan så hör vi av oss!</p>
+    </div>
+  </header>
+
+  <section class="container my-5">
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Namn</label>
+        <input type="text" class="form-control" id="name" placeholder="Ditt namn">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-postadress</label>
+        <input type="email" class="form-control" id="email" placeholder="namn@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Meddelande</label>
+        <textarea class="form-control" id="message" rows="4" placeholder="Skriv ditt meddelande här"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Skicka</button>
+    </form>
+  </section>
+
+  <footer class="bg-primary text-white text-center py-3">
+    <p>&copy; 2025 VårProjektet</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
