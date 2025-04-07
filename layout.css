@@ -13,3 +13,11 @@ section {
     border-radius: 0.5rem;
   }
   
+  .logga {
+    max-width: 6em;
+    max-height: 6em;
+    margin-bottom: 1.5em;
+    margin-right: 8em;
+    border: 0.25em solid rgba(33, 199, 129, 1)
+
+  }
