@@ -10,7 +10,8 @@
   }
   
   .bg-secondary {
-    background-color: var(--secondary-color) !important;
+    background: rgb(0,63,117) !important;
+background: linear-gradient(90deg, rgba(0,63,117,1) 0%, rgba(9,198,97,1) 100%) !important;
   }
   
   .text-primary {
