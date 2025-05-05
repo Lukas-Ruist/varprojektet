@@ -3,19 +3,242 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VårProdukt – Design</title>
+  <title>PresencePoint – Design</title>
   <link rel="stylesheet" href="css/bootstraptheme.css" />
   <link rel="stylesheet" href="css/color.css" />
   <link rel="stylesheet" href="css/font.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    :root {
+      --primary-color: #466080;
+      --secondary-color: #21c781;
+      --accent-color: #ff6b6b;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .bg-animated {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+      background-size: 300% 300%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .logga {
+      max-width: 6em;
+      max-height: 6em;
+      margin-bottom: 1.5em;
+      margin-right: 8em;
+      border: 0.25em solid rgba(33, 199, 129, 1);
+      transition: all 0.5s ease;
+      filter: drop-shadow(0 0 10px rgba(33, 199, 129, 0.5));
+    }
+
+    .logga:hover {
+      transform: rotate(15deg) scale(1.1);
+      filter: drop-shadow(0 0 15px rgba(33, 199, 129, 0.8));
+    }
+
+    .navbar {
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar.scrolled {
+      background-color: rgba(70, 96, 128, 0.95) !important;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary-color);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+      z-index: 1;
+    }
+
+    footer {
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    }
+
+    .btn-primary {
+      background-color: var(--secondary-color);
+      border: none;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary:hover {
+      background-color: #1aa76d;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(33, 199, 129, 0.4);
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      border: none;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-img-top {
+      transition: transform 0.5s ease;
+      height: 250px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+
+    .img-gallery {
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .img-gallery:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .design-feature {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .design-feature:hover {
+      background-color: rgba(33, 199, 129, 0.05);
+      transform: translateY(-5px);
+    }
+
+    .design-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+
+    .product-showcase {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-showcase::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+      z-index: 1;
+    }
+  </style>
 </head>
 <body>
+  <!-- Animerad bakgrund -->
+  <div class="bg-animated"></div>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-      <img src="loggafardig.svg" class="logga rounded float-start" alt="Logga" >
-      <a class="navbar-brand" href="index.html">VårProdukt</a>
+      <img src="loggafardig.svg" class="logga rounded float-start" alt="Logga">
+      <a class="navbar-brand" href="index.html">PresencePoint</a>
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navLinks">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,30 +252,180 @@
     </div>
   </nav>
 
-  <header class="bg-secondary text-white text-center py-5">
+  <header class="text-white text-center py-5">
     <div class="container">
-      <h1 class="display-4">Innovativ design</h1>
-      <p class="lead">Vi har kombinerat estetik med funktion</p>
+      <h1 class="display-4 animate-on-scroll">PresencePoints design</h1>
+      <p class="lead animate-on-scroll">Form och funktion i perfekt harmoni</p>
     </div>
   </header>
 
-  <section class="container my-5">
-    <div class="row g-4">
-      <div class="col-md-6">
-        <img src="img/design1.jpg" class="img-fluid rounded shadow" alt="Produktbild 1">
+    <!-- Designprinciper -->
+    <div class="row mt-5 animate-on-scroll" style="animation-delay: 0.2s">
+      <div class="col-12 text-center mb-4">
+        <h2>Våra designprinciper</h2>
+        <p class="lead">Varje detalj är noggrant utformad för optimal prestanda och användarupplevelse</p>
       </div>
-      <div class="col-md-6">
-        <h3>Stilren och praktisk</h3>
-        <p>Designad med både användarvänlighet och modern estetik i åtanke. Passar in i alla miljöer.</p>
-        <a href="kontakt.html" class="btn btn-primary">Kontakta oss</a>
+      
+      <div class="col-md-4">
+        <div class="design-feature">
+          <div class="design-icon">
+            <i class="bi bi-brightness-high"></i>
+          </div>
+          <h4>Minimalistisk</h4>
+          <p>Ren design utan onödiga element som distraherar från huvudfunktionen. PresencePoint är diskret men ändå tydlig.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="design-feature">
+          <div class="design-icon">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h4>Hållbar</h4>
+          <p>Byggd för lång livslängd med högkvalitativa material som tål daglig användning i tuffa miljöer.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="design-feature">
+          <div class="design-icon">
+            <i class="bi bi-sliders"></i>
+          </div>
+          <h4>Anpassningsbar</h4>
+          <p>Möjlighet till anpassning efter din specifika miljö och behov, både fysiskt och digitalt.</p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <footer class="bg-primary text-white text-center py-3">
-    <p>&copy; 2025 VårProjektet</p>
+    <!-- Ytterligare produktbilder -->
+    <div class="row mt-3 animate-on-scroll" style="animation-delay: 0.6s">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="https://github.com/Lukas-Ruist/varprojektet/blob/main/1000002686.jpg?raw=true" class="card-img-top" alt="PresencePoint från annan vinkel">
+          <div class="card-body">
+            <h5 class="card-title">Robust konstruktion</h5>
+            <p class="card-text">PresencePoint är byggd för att klara daglig användning i tuffa miljöer. Den tål stötar, damm och fukt.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="https://github.com/Lukas-Ruist/varprojektet/blob/main/1000002685.jpg?raw=true" class="card-img-top" alt="PresencePoint kortläsare">
+          <div class="card-body">
+            <h5 class="card-title">Flexibel montering</h5>
+            <p class="card-text">Med flera monteringsalternativ kan PresencePoint installeras på vägg, bord eller i receptionsdiskar.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="https://github.com/Lukas-Ruist/varprojektet/blob/main/1000002684.jpg?raw=true" class="card-img-top" alt="Användning av PresencePoint">
+          <div class="card-body">
+            <h5 class="card-title">Tillgänglighet</h5>
+            <p class="card-text">Designad för alla användare, med tydliga visuella och akustiska signaler som gör den lätt att använda.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <footer class="bg-primary text-white text-center py-4">
+    <div class="container">
+      <p>&copy; 2025 PresencePoint. Alla rättigheter förbehållna.</p>
+      <div class="social-icons mt-3">
+        <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animerad logga-effekt
+      const logo = document.querySelector('.logga');
+      if (logo) {
+        logo.classList.add('animate__animated', 'animate__bounceIn');
+        
+        logo.addEventListener('mouseenter', function() {
+          this.classList.add('animate__animated', 'animate__pulse');
+        });
+        
+        logo.addEventListener('animationend', function() {
+          this.classList.remove('animate__animated', 'animate__pulse');
+        });
+      }
+
+      // Scroll-animationer
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      animateElements.forEach(el => observer.observe(el));
+
+      // Navbar scroll-effekt
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Initiera bildgalleri-modal
+      const galleryImages = document.querySelectorAll('.img-gallery');
+      galleryImages.forEach(img => {
+        img.addEventListener('click', function() {
+          const modal = document.createElement('div');
+          modal.style.position = 'fixed';
+          modal.style.top = '0';
+          modal.style.left = '0';
+          modal.style.width = '100%';
+          modal.style.height = '100%';
+          modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
+          modal.style.display = 'flex';
+          modal.style.alignItems = 'center';
+          modal.style.justifyContent = 'center';
+          modal.style.zIndex = '1000';
+          modal.style.cursor = 'zoom-out';
+          
+          const modalImg = document.createElement('img');
+          modalImg.src = this.src;
+          modalImg.style.maxHeight = '90vh';
+          modalImg.style.maxWidth = '90vw';
+          modalImg.style.objectFit = 'contain';
+          
+          modal.appendChild(modalImg);
+          document.body.appendChild(modal);
+          
+          modal.addEventListener('click', function() {
+            document.body.removeChild(modal);
+          });
+        });
+      });
+
+      // Auto-rotate carousel
+      const myCarousel = document.getElementById('productCarousel');
+      if (myCarousel) {
+        const carousel = new bootstrap.Carousel(myCarousel, {
+          interval: 3000,
+          wrap: true
+        });
+      }
+    });
+  </script>
 </body>
 </html>
