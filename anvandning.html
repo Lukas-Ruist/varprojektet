@@ -3,18 +3,291 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VårProdukt – Användning</title>
+  <title>PresencePoint – Användning</title>
   <link rel="stylesheet" href="css/bootstraptheme.css" />
   <link rel="stylesheet" href="css/color.css" />
   <link rel="stylesheet" href="css/font.css" />
   <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    :root {
+      --primary-color: #466080;
+      --secondary-color: #21c781;
+      --accent-color: #ff6b6b;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .bg-animated {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+      background-size: 300% 300%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .logga {
+      max-width: 6em;
+      max-height: 6em;
+      margin-bottom: 1.5em;
+      margin-right: 8em;
+      border: 0.25em solid rgba(33, 199, 129, 1);
+      transition: all 0.5s ease;
+      filter: drop-shadow(0 0 10px rgba(33, 199, 129, 0.5));
+    }
+
+    .logga:hover {
+      transform: rotate(15deg) scale(1.1);
+      filter: drop-shadow(0 0 15px rgba(33, 199, 129, 0.8));
+    }
+
+    .navbar {
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar.scrolled {
+      background-color: rgba(70, 96, 128, 0.95) !important;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary-color);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+      z-index: 1;
+    }
+
+    footer {
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    }
+
+    .btn-primary {
+      background-color: var(--secondary-color);
+      border: none;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary:hover {
+      background-color: #1aa76d;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(33, 199, 129, 0.4);
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      border: none;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-body {
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover .card-body {
+      background-color: rgba(33, 199, 129, 0.05);
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background-color: var(--secondary-color);
+      color: white;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover .step-number {
+      transform: scale(1.1);
+      background-color: var(--primary-color);
+    }
+
+    section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .video-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(70, 96, 128, 0.3), rgba(33, 199, 129, 0.3));
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .video-container:hover::before {
+      opacity: 1;
+    }
+
+    .feature-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .feature-list li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .feature-list li::before {
+      content: '\f00c';
+      font-family: 'bootstrap-icons';
+      position: absolute;
+      left: 0;
+      color: var(--secondary-color);
+    }
+
+    .usage-icon {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.75rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--secondary-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 0.25rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: var(--secondary-color);
+      border: 3px solid white;
+    }
+  </style>
 </head>
 <body>
+  <!-- Animerad bakgrund -->
+  <div class="bg-animated"></div>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-      <img src="loggafardig.svg" class="logga rounded float-start" alt="Logga" >
-      <a class="navbar-brand" href="index.html">VårProdukt</a>
+      <img src="loggafardig.svg" class="logga rounded float-start" alt="Logga">
+      <a class="navbar-brand" href="index.html">PresencePoint</a>
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navLinks">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -28,46 +301,214 @@
     </div>
   </nav>
 
-  <header class="bg-secondary text-white text-center py-5">
+  <header class="text-white text-center py-5">
     <div class="container">
-      <h1 class="display-4">Så här funkar det</h1>
-      <p class="lead">Lär dig använda vår produkt på bara några steg</p>
+      <h1 class="display-4 animate-on-scroll">Så här använder du PresencePoint</h1>
+      <p class="lead animate-on-scroll">Enkel installation och intuitiv hantering för smidig närvarohantering</p>
     </div>
   </header>
 
   <section class="container my-5">
-    <div class="row g-4">
+    <div class="row mb-5 animate-on-scroll">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="mb-4">3 enkla steg till att komma igång</h2>
+        <p class="lead">PresencePoint är designad för att vara enkel att installera och använda, samtidigt som den erbjuder avancerade funktioner för närvarospårning och säkerhet.</p>
+      </div>
+    </div>
+
+    <div class="row g-4 animate-on-scroll">
       <div class="col-md-4">
         <div class="card h-100 shadow">
-          <div class="card-body">
-            <h5 class="card-title">Steg 1</h5>
-            <p class="card-text">Packa upp och anslut produkten med vår app.</p>
+          <div class="card-body text-center">
+            <div class="step-number mb-3">1</div>
+            <h5 class="card-title">Installation</h5>
+            <p class="card-text">Montera enheten på valfri yta och anslut till strömförsörjning. Enheten kopplar automatiskt upp sig mot vårt nätverk.</p>
+            <div class="usage-icon">
+              <i class="bi bi-tools"></i>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 animate-on-scroll" style="animation-delay: 0.2s">
         <div class="card h-100 shadow">
-          <div class="card-body">
-            <h5 class="card-title">Steg 2</h5>
-            <p class="card-text">Anpassa funktioner efter dina behov.</p>
+          <div class="card-body text-center">
+            <div class="step-number mb-3">2</div>
+            <h5 class="card-title">Konfiguration</h5>
+            <p class="card-text">Använd vår app eller webbportal för att anpassa inställningar efter dina behov och definiera övervakningszoner.</p>
+            <div class="usage-icon">
+              <i class="bi bi-gear"></i>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 animate-on-scroll" style="animation-delay: 0.4s">
         <div class="card h-100 shadow">
+          <div class="card-body text-center">
+            <div class="step-number mb-3">3</div>
+            <h5 class="card-title">Övervakning</h5>
+            <p class="card-text">Få realtidsuppdateringar och historisk data om närvaro och rörelser i dina definierade zoner.</p>
+            <div class="usage-icon">
+              <i class="bi bi-graph-up"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Avancerad användning -->
+    <div class="row mt-5 animate-on-scroll" style="animation-delay: 0.6s">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="text-center mb-4">Avancerade funktioner</h2>
+        <div class="card shadow">
           <div class="card-body">
-            <h5 class="card-title">Steg 3</h5>
-            <p class="card-text">Börja använda – enkelt och intuitivt!</p>
+            <div class="row">
+              <div class="col-md-6">
+                <h4><i class="bi bi-shield-lock me-2"></i>Säkerhetsfunktioner</h4>
+                <ul class="feature-list">
+                  <li>Automatiska larm vid oauktoriserad åtkomst</li>
+                  <li>Tidsinställda accessbegränsningar</li>
+                  <li>Integrering med befintliga säkerhetssystem</li>
+                  <li>Krypterad datatransmission</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h4><i class="bi bi-bar-chart me-2"></i>Rapportering</h4>
+                <ul class="feature-list">
+                  <li>Anpassningsbara rapporter</li>
+                  <li>Export till Excel och PDF</li>
+                  <li>Schemalagda rapporter per e-post</li>
+                  <li>Realtidsstatistik</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Videoguide -->
+    <div class="row mt-5 animate-on-scroll" style="animation-delay: 0.8s">
+      <div class="col-12">
+        <div class="card shadow">
+          <div class="card-body text-center">
+            <h3 class="mb-4">Videoinstruktioner</h3>
+            <div class="ratio ratio-16x9 video-container">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="PresencePoint instruktionsvideo" allowfullscreen></iframe>
+            </div>
+            <div class="mt-4">
+              <a href="#" class="btn btn-primary me-3"><i class="bi bi-download me-2"></i>Ladda bruksanvisning</a>
+              <a href="kontakt.html" class="btn btn-outline-primary"><i class="bi bi-headset me-2"></i>Kontakta support</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vanliga frågor -->
+    <div class="row mt-5 animate-on-scroll" style="animation-delay: 1s">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="text-center mb-4">Vanliga frågor</h2>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Hur många enheter kan jag koppla till systemet?
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Du kan koppla upp till 50 enheter per system. För större installationer rekommenderar vi vår Enterprise-lösning som stöder obegränsat antal enheter.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Kan PresencePoint integreras med andra system?
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Ja, PresencePoint erbjuder API:er för integrering med de flesta moderna HR-system, säkerhetssystem och byggnadssystem. Vi har färdiga integrationer för flera populära plattformar.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Vilken typ av underhåll kräver enheterna?
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                PresencePoint-enheter kräver minimalt underhåll. Vi rekommenderar en kontroll av sensornoggrannhet var 6:e månad och en rengöring av linsen vid behov. Alla firmwareuppdateringar sker automatiskt över luften.
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="bg-primary text-white text-center py-3">
-    <p>&copy; 2025 VårProjektet</p>
+  <footer class="bg-primary text-white text-center py-4">
+    <div class="container">
+      <p>&copy; 2025 PresencePoint. Alla rättigheter förbehållna.</p>
+      <div class="social-icons mt-3">
+        <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animerad logga-effekt
+      const logo = document.querySelector('.logga');
+      if (logo) {
+        logo.classList.add('animate__animated', 'animate__bounceIn');
+        
+        logo.addEventListener('mouseenter', function() {
+          this.classList.add('animate__animated', 'animate__pulse');
+        });
+        
+        logo.addEventListener('animationend', function() {
+          this.classList.remove('animate__animated', 'animate__pulse');
+        });
+      }
+
+      // Scroll-animationer
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      animateElements.forEach(el => observer.observe(el));
+
+      // Navbar scroll-effekt
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Initiera tooltips
+      const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    });
+  </script>
 </body>
 </html>
