@@ -8,12 +8,243 @@
   <link rel="stylesheet" href="css/color.css" />
   <link rel="stylesheet" href="css/font.css" />
   <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <style>
+    :root {
+      --primary-color: #466080;
+      --secondary-color: #21c781;
+      --accent-color: #ff6b6b;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+    }
+
+    /* Valideringsstilar */
+    .is-valid {
+      border-color: #198754 !important;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right calc(0.375em + 0.1875rem) center;
+      background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+    }
+
+    .is-invalid {
+      border-color: #dc3545 !important;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right calc(0.375em + 0.1875rem) center;
+      background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+    }
+
+    .invalid-feedback {
+      display: none;
+      width: 100%;
+      margin-top: 0.25rem;
+      font-size: 0.875em;
+      color: #dc3545;
+    }
+
+    /* Anpassning för textarea-validering */
+    textarea.is-valid,
+    textarea.is-invalid {
+      background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+    }
+
+    /* Anpassningar för din befintliga CSS */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    section {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    
+    .card {
+      border: none;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    img {
+      max-width: 100%;
+      border-radius: 0.5rem;
+    }
+    
+    .logga {
+        max-width: 6em;
+        max-height: 6em;
+        margin-bottom: 1.5em;
+        margin-right: 8em;
+        border: 0.25em solid rgba(33, 199, 129, 1);
+        transition: all 0.5s ease;
+        filter: drop-shadow(0 0 10px rgba(33, 199, 129, 0.5));
+      }
+    
+
+    .logga:hover {
+      transform: rotate(15deg) scale(1.1);
+      filter: drop-shadow(0 0 15px rgba(33, 199, 129, 0.8));
+    }
+
+    /* Animerad bakgrundseffekt */
+    .bg-animated {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+      background-size: 300% 300%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Förbättrat formulär */
+    form {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    form:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Knappeffekter */
+    .btn-primary {
+      background-color: var(--secondary-color);
+      border: none;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary:hover {
+      background-color: #1aa76d;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(33, 199, 129, 0.4);
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+    }
+
+    .btn-primary:focus:not(:active)::after {
+      animation: ripple 1s ease-out;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(20, 20);
+        opacity: 0;
+      }
+    }
+
+    /* Header-effekter */
+    header {
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+      z-index: 1;
+    }
+
+    /* Footer-effekter */
+    footer {
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    }
+
+    /* Animerade element */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Specialeffekt för loggan */
+    @keyframes logoPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .logo-animate {
+      animation: logoPulse 2s infinite;
+    }
+  </style>
+  <script>
+    // Initiera EmailJS med ditt public key
+    (function() {
+      emailjs.init('wzaEvK2_Y7xnfvIGx');
+    })();
+  </script>
 </head>
 <body>
+  <!-- Animerad bakgrund -->
+  <div class="bg-animated"></div>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-      <img src="loggafardig.svg" class="logga rounded float-start" alt="Logga" >
+      <img src="loggafardig.svg" class="logga rounded float-start logo-animate" alt="Logga" id="logo">
       <a class="navbar-brand" href="index.html">VårProdukt</a>
       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navLinks">
         <span class="navbar-toggler-icon"></span>
@@ -30,24 +261,32 @@
 
   <header class="bg-secondary text-white text-center py-5">
     <div class="container">
-      <h1 class="display-4">Vill du prata med oss?</h1>
-      <p class="lead">Fyll i formuläret nedan så hör vi av oss!</p>
+      <h1 class="display-4 animate__animated animate__fadeInDown">Vill du prata med oss?</h1>
+      <p class="lead animate__animated animate__fadeIn animate__delay-1s">Fyll i formuläret nedan så hör vi av oss!</p>
     </div>
   </header>
 
   <section class="container my-5">
-    <form>
+    <form class="animate-on-scroll">
       <div class="mb-3">
         <label for="name" class="form-label">Namn</label>
-        <input type="text" class="form-control" id="name" placeholder="Ditt namn">
+        <input type="text" class="form-control" id="name" placeholder="Ditt namn" required>
+        <div class="invalid-feedback">Detta fält är obligatoriskt</div>
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">E-postadress</label>
-        <input type="email" class="form-control" id="email" placeholder="namn@example.com">
+        <input type="email" class="form-control" id="email" placeholder="namn@example.com" required>
+        <div class="invalid-feedback">Ange en giltig e-postadress</div>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Telefonnummer (valfritt)</label>
+        <input type="tel" class="form-control" id="phone" placeholder="070-123 45 67">
+        <div class="invalid-feedback">Ange ett giltigt telefonnummer (t.ex. 070-123 45 67)</div>
       </div>
       <div class="mb-3">
         <label for="message" class="form-label">Meddelande</label>
-        <textarea class="form-control" id="message" rows="4" placeholder="Skriv ditt meddelande här"></textarea>
+        <textarea class="form-control" id="message" rows="4" placeholder="Skriv ditt meddelande här" required></textarea>
+        <div class="invalid-feedback">Detta fält är obligatoriskt</div>
       </div>
       <button type="submit" class="btn btn-primary">Skicka</button>
     </form>
@@ -58,5 +297,236 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Kontaktformulär med EmailJS
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animerad logga-effekt
+      const logo = document.getElementById('logo');
+      if (logo) {
+        logo.addEventListener('mouseenter', function() {
+          this.classList.add('animate__animated', 'animate__pulse');
+        });
+        
+        logo.addEventListener('animationend', function() {
+          this.classList.remove('animate__animated', 'animate__pulse');
+        });
+      }
+
+      // Scroll-animationer
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      animateElements.forEach(el => observer.observe(el));
+
+      // Kontaktformulär
+      const contactForm = document.querySelector('form');
+      
+      if (contactForm) {
+        // Validering vid input
+        contactForm.querySelectorAll('input, textarea').forEach(element => {
+          element.addEventListener('input', function() {
+            validateField(this);
+          });
+        });
+        
+        // Hantera formulärinsändning
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          if (validateForm()) {
+            sendEmail(this);
+          }
+        });
+      }
+    });
+
+    // Validera enskilt fält med Bootstrap-klasser
+    function validateField(field) {
+      const feedbackElement = field.nextElementSibling;
+      
+      if (field.required && !field.value.trim()) {
+        field.classList.add('is-invalid');
+        if (feedbackElement && feedbackElement.classList.contains('invalid-feedback')) {
+          feedbackElement.textContent = field.id === 'email' ? 'Ange en giltig e-postadress' : 'Detta fält är obligatoriskt';
+          feedbackElement.style.display = 'block';
+        }
+        return false;
+      }
+      
+      // Specialvalidering för e-post
+      if (field.type === 'email' && field.value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(field.value)) {
+          field.classList.add('is-invalid');
+          if (feedbackElement && feedbackElement.classList.contains('invalid-feedback')) {
+            feedbackElement.textContent = 'Ange en giltig e-postadress';
+            feedbackElement.style.display = 'block';
+          }
+          return false;
+        }
+      }
+      
+      // Specialvalidering för telefonnummer
+      if (field.id === 'phone' && field.value) {
+        const phoneRegex = /^(\+46|0)[\s-]?7[\s-]?[02369]\d[\s-]?\d{2}[\s-]?\d{2}[\s-]?\d{2}$/;
+        if (!phoneRegex.test(field.value)) {
+          field.classList.add('is-invalid');
+          if (feedbackElement && feedbackElement.classList.contains('invalid-feedback')) {
+            feedbackElement.textContent = 'Ange ett giltigt telefonnummer (t.ex. 070-123 45 67)';
+            feedbackElement.style.display = 'block';
+          }
+          return false;
+        }
+      }
+      
+      // Om allt är OK
+      field.classList.remove('is-invalid');
+      if (field.value) field.classList.add('is-valid');
+      if (feedbackElement && feedbackElement.classList.contains('invalid-feedback')) {
+        feedbackElement.style.display = 'none';
+      }
+      return true;
+    }
+
+    // Validera hela formuläret
+    function validateForm() {
+      const form = document.querySelector('form');
+      let isValid = true;
+      
+      form.querySelectorAll('input[required], textarea[required]').forEach(field => {
+        if (!validateField(field)) {
+          isValid = false;
+        }
+      });
+      
+      // Validera telefonnummer om det är ifyllt
+      const phoneField = form.querySelector('#phone');
+      if (phoneField.value && !validateField(phoneField)) {
+        isValid = false;
+      }
+      
+      return isValid;
+    }
+
+    // Skicka e-post via EmailJS
+    function sendEmail(form) {
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.textContent;
+      
+      // Visa laddningsindikator
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Skickar...';
+      
+      // Hämta formulärdata
+      const formData = {
+        from_name: form.querySelector('#name').value,
+        from_email: form.querySelector('#email').value,
+        phone: form.querySelector('#phone').value || 'Inte angivet',
+        message: form.querySelector('#message').value
+      };
+      
+      // Skicka e-post
+      emailjs.send('service_ugbu3pb', 'template_xscxjzm', formData)
+        .then(function(response) {
+          // Visa Bootstrap-alert för framgång
+          showAlert('Tack för ditt meddelande! Vi återkommer så snart vi kan.', 'success');
+          form.reset();
+          
+          // Återställ valideringsmarkeringar
+          form.querySelectorAll('.is-valid').forEach(el => {
+            el.classList.remove('is-valid');
+          });
+
+          // Konfettieffekt vid lyckat skickat formulär
+          triggerConfetti();
+        }, function(error) {
+          // Visa Bootstrap-alert för fel
+          showAlert('Ett fel uppstod när meddelandet skulle skickas. Försök igen senare.', 'danger');
+          console.error('EmailJS error:', error);
+          console.log('Error details:', {
+            serviceId: 'service_ugbu3pb',
+            templateId: 'template_xscxjzm',
+            publicKey: 'wzaEvK2_Y7xnfvIGx',
+            formData: formData
+          });
+        })
+        .finally(function() {
+          // Återställ knappen
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        });
+    }
+
+    // Visa Bootstrap-alert
+    function showAlert(message, type) {
+      // Ta bort befintliga alerts
+      const existingAlert = document.querySelector('.alert');
+      if (existingAlert) {
+        existingAlert.remove();
+      }
+      
+      const alertDiv = document.createElement('div');
+      alertDiv.className = `alert alert-${type} alert-dismissible fade show mt-3`;
+      alertDiv.role = 'alert';
+      alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Stäng"></button>
+      `;
+      
+      // Placera alerten efter formuläret
+      const form = document.querySelector('form');
+      form.parentNode.insertBefore(alertDiv, form.nextElementSibling);
+      
+      // Ta bort alerten automatiskt efter 5 sekunder
+      setTimeout(() => {
+        const bsAlert = new bootstrap.Alert(alertDiv);
+        bsAlert.close();
+      }, 5000);
+    }
+
+    // Konfettieffekt
+    function triggerConfetti() {
+      const confettiSettings = {
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#466080', '#21c781', '#ff6b6b', '#ffffff']
+      };
+      
+      // Ladda confetti.js om det inte redan är laddat
+      if (typeof confetti === 'undefined') {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js';
+        script.onload = () => confetti(confettiSettings);
+        document.head.appendChild(script);
+      } else {
+        confetti(confettiSettings);
+      }
+    }
+
+    // Ladda animationer när sidan laddas
+    window.addEventListener('load', function() {
+      // Animera loggan vid sidladdning
+      const logo = document.getElementById('logo');
+      if (logo) {
+        setTimeout(() => {
+          logo.classList.add('animate__animated', 'animate__bounceIn');
+        }, 500);
+      }
+      
+      // Ljudeffekt (valfri)
+      const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3');
+      audio.volume = 0.3;
+      audio.play().catch(e => console.log('Autoplay prevented:', e));
+    });
+  </script>
 </body>
 </html>
