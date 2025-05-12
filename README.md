@@ -27,3 +27,11 @@ Vi har skapat en mail-adress för vårat företag så andra kan kontakta oss. "p
 Idag har vi färdigställt logotypen samt skrivit färdigt CTA (Call to Action)
 ## V.15 
 Idag så har vi ändrat lite hur hemsidan ser ut, vi har skapat en gradient på Nav-baren. Vi har även fixat så att skicka knappen på kontakt sidan faktiskt skickar ett mail till oss. Vi har infogat loggan på hemsidan.
+## V.16 
+låv
+## V.17 
+Vi separerade loggan och låste fast navbaren. 
+## V.18 
+fixa confirmationssidan lite mer
+## V.19
+trobelshoutar sidan
