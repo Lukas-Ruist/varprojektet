@@ -1,18 +1,21 @@
 # Varprojektet
 # Frågor
-# 1
+### 1
 Skicka in feadback om produktens hållbarhet.
-# 2
+### 2
 Ta reda på hur du konfigurerar din produkt
-# 3
+### 3
 Ta reda på vad som kännetecknar våran produkt
-# 4
+### 4
 Hur många enheter kan jag koppla i samma system. 
-# 5
+### 5
 Ta reda på hur du laddar ner bruksamvisningen. 
-# 6
+### 6
 Ta reda på 3 saker som gör våran produkt säker 
-
+### 7
+Ta reda på vårat kontors öppetider
+### 8
+Ta reda på telefånnummeret
 # Färgschema
 Primär  : RGBA 466080ff
 
