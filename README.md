@@ -53,4 +53,6 @@ fixa confirmationssidan lite mer
 ## V.19
 trobelshoutar sidan
 ## V.20
+Vi optimerade sidan
+## V.21
 Vi utförde användartester
