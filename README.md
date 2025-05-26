@@ -56,3 +56,5 @@ troubleshootar sidan.
 Vi optimerade sidan.
 ## V.21
 Vi utförde användartester.
+## V.22 
+Denna veckan har vi validerat hemsidan.
