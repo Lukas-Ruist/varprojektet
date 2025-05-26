@@ -41,18 +41,18 @@ skapat en wireframe,
 ## V.13
 Vi har skapat en mail-adress för vårat företag så andra kan kontakta oss. "presence.point2025@gmail.com". Vi har lagat html-dokumentet.
 ## V.14
-Idag har vi färdigställt logotypen samt skrivit färdigt CTA (Call to Action)
+Idag har vi färdigställt logotypen samt skrivit färdigt CTA (Call to Action).
 ## V.15 
 Idag så har vi ändrat lite hur hemsidan ser ut, vi har skapat en gradient på Nav-baren. Vi har även fixat så att skicka knappen på kontakt sidan faktiskt skickar ett mail till oss. Vi har infogat loggan på hemsidan.
 ## V.16 
-lov
+Lov
 ## V.17 
 Vi separerade loggan och låste fast navbaren. 
 ## V.18 
-fixa confirmationssidan lite mer
+Fixa confirmationssidan lite mer.
 ## V.19
-troubleshootar sidan
+troubleshootar sidan.
 ## V.20
-Vi optimerade sidan
+Vi optimerade sidan.
 ## V.21
-Vi utförde användartester
+Vi utförde användartester.
