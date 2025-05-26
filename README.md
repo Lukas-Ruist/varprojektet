@@ -51,7 +51,7 @@ Vi separerade loggan och låste fast navbaren.
 ## V.18 
 fixa confirmationssidan lite mer
 ## V.19
-trobelshoutar sidan
+troubleshootar sidan
 ## V.20
 Vi optimerade sidan
 ## V.21
