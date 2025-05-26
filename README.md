@@ -1,21 +1,21 @@
 # Varprojektet
 # Frågor
 ### 1
-Skicka in feadback om produktens hållbarhet.
+Skicka in feedback om produktens hållbarhet.
 ### 2
-Ta reda på hur du konfigurerar din produkt
+Ta reda på hur du konfigurerar din produkt.
 ### 3
-Ta reda på vad som kännetecknar våran produkt
+Ta reda på vad som kännetecknar vår produkt.
 ### 4
-Hur många enheter kan jag koppla i samma system. 
+Hur många enheter kan jag koppla i samma system? 
 ### 5
-Ta reda på hur du laddar ner bruksamvisningen. 
+Ta reda på hur du laddar ner bruksanvisningen. 
 ### 6
-Ta reda på 3 saker som gör våran produkt säker 
+Ta reda på tre saker som gör vår produkt säker.
 ### 7
-Ta reda på vårat kontors öppetider
+Ta reda på vårat kontors öppettider.
 ### 8
-Ta reda på telefonnummeret
+Ta reda på telefonnummeret.
 # Färgschema
 Primär  : RGBA 466080ff
 
@@ -29,7 +29,7 @@ Presence point är en produkt som vi skapar en sida till. Du skannar ditt kort o
 * https://www.microsoft.com/
 # Loggbok
 ## V.10
-Vi gjorde ett repository och försökte hitta ett pluggin för att länka våran kod vilket inte gick så väl.
+Vi gjorde ett repository och försökte hitta ett plugin för att länka våran kod vilket inte gick så väl.
 ## V.11
 Idag har vi definierat hemsidan, påbörjat en moodbord, påbörjat en sitemap och gjort ett färg skema. Vi har även skapat alla CSS, JS och HTML dokument vi ska använda + bootstrap och theme. Vi har försökt länka ihop dom men vet inte en om det funkar. Vi gjorde även en skiss, https://github.com/Lukas-Ruist/varprojektet/blob/main/Media.jpg.
 ## V.12
