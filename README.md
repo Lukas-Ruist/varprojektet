@@ -15,7 +15,7 @@ Ta reda på 3 saker som gör våran produkt säker
 ### 7
 Ta reda på vårat kontors öppetider
 ### 8
-Ta reda på telefånnummeret
+Ta reda på telefonnummeret
 # Färgschema
 Primär  : RGBA 466080ff
 
