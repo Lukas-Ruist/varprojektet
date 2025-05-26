@@ -45,7 +45,7 @@ Idag har vi färdigställt logotypen samt skrivit färdigt CTA (Call to Action)
 ## V.15 
 Idag så har vi ändrat lite hur hemsidan ser ut, vi har skapat en gradient på Nav-baren. Vi har även fixat så att skicka knappen på kontakt sidan faktiskt skickar ett mail till oss. Vi har infogat loggan på hemsidan.
 ## V.16 
-låv
+lov
 ## V.17 
 Vi separerade loggan och låste fast navbaren. 
 ## V.18 
